@@ -41,6 +41,7 @@ images/docs/        → estudios y órdenes médicas (DNI tapado por privacidad)
 
 ## Actualizar datos
 
+- **Lo recaudado (barra de progreso)**: editar el objeto `CAMPAIGN` al inicio de `script.js` (`raised`, `goal`, `updated`), guardar, y hacer commit + push. Si el repo está conectado a Vercel, se redeploya solo.
 - **Alias / monto**: buscar `todosporBrunito.uala` y `$7.260.550` en `index.html`.
 - **WhatsApp**: buscar `5492984503869` en `index.html` (formato: 54 9 + código de área + número, sin espacios).
 - **Fotos**: reemplazar `images/flyer.jpg` o agregar nuevas imágenes en `images/` y referenciarlas en `index.html`.

@@ -1,3 +1,12 @@
+// ---- Progreso de la campaña ----
+// Para actualizar lo recaudado: cambiar estos 3 valores, guardar, y hacer commit + push.
+// (Vercel redeploya solo si el repo de GitHub está conectado)
+var CAMPAIGN = {
+  raised: 241100,
+  goal: 7260550,
+  updated: '23/09/2026'
+};
+
 (function () {
   var toastEl = document.getElementById('toast');
   var toastTimer;
@@ -105,4 +114,26 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
   });
+
+  function formatARS(n) {
+    return '$' + Math.round(n).toLocaleString('es-AR');
+  }
+
+  var fillEl = document.getElementById('progress-fill');
+  var barEl = document.getElementById('progress-bar');
+  var raisedEl = document.getElementById('progress-raised');
+  var goalEl = document.getElementById('progress-goal');
+  var percentEl = document.getElementById('progress-percent');
+  var updatedEl = document.getElementById('progress-updated');
+
+  if (fillEl && CAMPAIGN.goal > 0) {
+    var pct = Math.min(100, Math.max(0, (CAMPAIGN.raised / CAMPAIGN.goal) * 100));
+    var pctRounded = Math.round(pct * 10) / 10;
+    fillEl.style.width = pct + '%';
+    if (barEl) barEl.setAttribute('aria-valuenow', String(Math.round(pct)));
+    if (raisedEl) raisedEl.textContent = formatARS(CAMPAIGN.raised);
+    if (goalEl) goalEl.textContent = formatARS(CAMPAIGN.goal);
+    if (percentEl) percentEl.textContent = pctRounded + '%';
+    if (updatedEl) updatedEl.textContent = CAMPAIGN.updated;
+  }
 })();
