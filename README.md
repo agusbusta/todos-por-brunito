@@ -32,10 +32,11 @@ No hace falta configurar nada: al ser HTML estático, Vercel lo detecta y lo sir
 ## Estructura
 
 ```
-index.html      → contenido de la página
-styles.css       → estilos (mobile-first)
-script.js        → copiar alias / compartir por WhatsApp
-images/flyer.jpg → flyer original de la familia
+index.html          → contenido de la página
+styles.css          → estilos (mobile-first)
+script.js           → copiar alias / compartir por WhatsApp / lightbox de documentos
+images/bruno.jpg    → foto de Bruno (recortada del flyer original de la familia)
+images/docs/        → estudios y órdenes médicas (DNI tapado por privacidad)
 ```
 
 ## Actualizar datos

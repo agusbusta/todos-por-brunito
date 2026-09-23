@@ -64,4 +64,45 @@
     var msg = 'Ayudemos a Bruno a conseguir su casco ortopédico 💚 ' + window.location.href;
     shareWhatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
   }
+
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var lightboxClose = document.getElementById('lightbox-close');
+  var lastFocused = null;
+
+  function openLightbox(src, caption) {
+    if (!lightbox || !lightboxImg) return;
+    lastFocused = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.hidden = false;
+    lightboxClose.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.doc-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openLightbox(btn.getAttribute('data-full'), btn.getAttribute('data-caption'));
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
+  });
 })();

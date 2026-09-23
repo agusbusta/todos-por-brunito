@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Todos por Brunito">
 <meta property="og:description" content="Bruno tiene 9 meses y necesita tu ayuda para conseguir su casco ortopédico craneal.">
-<meta property="og:image" content="images/flyer.jpg">
+<meta property="og:image" content="images/bruno.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💚</text></svg>">
@@ -33,6 +33,7 @@
     <nav class="main-nav" aria-label="Navegación principal">
       <a href="#historia">Historia</a>
       <a href="#diagnostico">Diagnóstico</a>
+      <a href="#documentacion">Documentación</a>
       <a href="#ayudar">Cómo ayudar</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -54,7 +55,7 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="images/flyer.jpg" alt="Flyer de la campaña Todos por Brunito, con foto de Bruno sonriendo" loading="eager">
+        <img src="images/bruno.jpg" alt="Bruno sonriendo" loading="eager">
       </div>
     </div>
   </section>
@@ -98,7 +99,35 @@
     </div>
   </section>
 
-  <section class="section" id="ayudar">
+  <section class="section" id="documentacion">
+    <div class="container narrow">
+      <p class="eyebrow">Documentación</p>
+      <h2>La historia, en papeles</h2>
+      <p class="lead">Compartimos los estudios y las órdenes médicas de Bruno para que la campaña sea transparente. Por su privacidad, tapamos su número de DNI en los documentos que lo muestran.</p>
+    </div>
+    <div class="container">
+      <div class="doc-gallery">
+        <button class="doc-item" type="button" data-full="images/docs/ecografia.jpg" data-caption="Informe de ecografía cerebral — Diagnóstico por Imágenes Francisco López Lima">
+          <img src="images/docs/ecografia.jpg" alt="Informe de ecografía cerebral de Bruno" loading="lazy">
+          <span class="doc-caption">Informe de ecografía cerebral</span>
+        </button>
+        <button class="doc-item" type="button" data-full="images/docs/ecografia-craneal.jpg" data-caption="Placas de la ecografía craneal — Hospital General Roca">
+          <img src="images/docs/ecografia-craneal.jpg" alt="Placas de la ecografía craneal de Bruno" loading="lazy">
+          <span class="doc-caption">Placas de la ecografía craneal</span>
+        </button>
+        <button class="doc-item" type="button" data-full="images/docs/solicitud-ortesis.jpg" data-caption="Solicitud de órtesis craneal, firmada por la neurocirujana Dra. Claudia Moreno">
+          <img src="images/docs/solicitud-ortesis.jpg" alt="Solicitud de órtesis craneal para Bruno" loading="lazy">
+          <span class="doc-caption">Solicitud de órtesis craneal</span>
+        </button>
+        <button class="doc-item" type="button" data-full="images/docs/presupuesto.jpg" data-caption="Presupuesto oficial del casco ortopédico — Plagiocefalia Argentina S.R.L.">
+          <img src="images/docs/presupuesto.jpg" alt="Presupuesto del casco ortopédico de Bruno" loading="lazy">
+          <span class="doc-caption">Presupuesto del casco: $7.260.550</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="ayudar">
     <div class="container narrow">
       <p class="eyebrow">Cómo ayudar</p>
       <h2>Cada aporte suma</h2>
@@ -125,7 +154,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="contacto">
+  <section class="section" id="contacto">
     <div class="container narrow center">
       <p class="eyebrow">Contacto</p>
       <h2>Hablá con Brenda</h2>
@@ -146,6 +175,14 @@
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Cerrar">✕</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
 
 <script src="script.js"></script>
 </body>
