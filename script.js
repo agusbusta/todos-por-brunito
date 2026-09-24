@@ -4,7 +4,7 @@
 var CAMPAIGN = {
   raised: 241100,
   goal: 7260550,
-  updated: '23/09/2026'
+  updated: '24/09/2026'
 };
 
 (function () {
