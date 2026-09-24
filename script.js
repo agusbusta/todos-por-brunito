@@ -2,7 +2,7 @@
 // Para actualizar lo recaudado: cambiar estos 3 valores, guardar, y hacer commit + push.
 // (Vercel redeploya solo si el repo de GitHub está conectado)
 var CAMPAIGN = {
-  raised: 241100,
+  raised: 426257.92,
   goal: 7260550,
   updated: '24/09/2026'
 };
